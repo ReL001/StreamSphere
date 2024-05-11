@@ -1,0 +1,19 @@
+{
+  "name": "streamsphere",
+  "version": "1.0.0",
+  "description": "Complete Video Hosting website similar to youtube with features like login, signup, upload video, like, dislike, comment, reply, subscribe, unsuscribe, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "javascript",
+    "node",
+    "express",
+    "mongoDB",
+    "mongoose"
+  ],
+  "author": "ReL001",
+  "license": "ISC"
+}
