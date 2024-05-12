@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Complete Video Hosting website similar to youtube with features like login, signup, upload video, like, dislike, comment, reply, subscribe, unsuscribe, etc",
   "main": "index.js",
+  "tyoe": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon src/index.js"
   },
   "keywords": [
     "backend",
@@ -15,5 +17,8 @@
     "mongoose"
   ],
   "author": "ReL001",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }

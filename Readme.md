@@ -1,4 +1,5 @@
 # StreamSphere
 
-### A video Streaming platform similar to YouTube, where users can upload, view, share, comment and like videos.
+## A video Streaming platform similar to YouTube
 
+Complete Video Hosting website similar to youtube with features like login, signup, upload video, like, dislike, comment, reply, subscribe, unsuscribe,
