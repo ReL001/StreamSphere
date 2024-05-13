@@ -1,6 +1,17 @@
-import mongoosefrom from "mongoose"; 
-import { DB_NAME } from "./constants";
+// require('dotenv').config()
+// console.log(process.env) // remove this after you've confirmed it is working
 
+import dotenv from "dotenv"   // for working of this new importing of dotenv we need to add "type": "module" in package.json and also need to add {"dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"} into scripts in package.json
+import mongoose from "mongoose";
+import { DB_NAME } from "./constants.js";
+import connectDB from "./db/DBconnect.js";
+dotenv.config({     // calling the config method of the dotenv object to load the environment variables from the .env file
+    path:'./env'
+})
+
+connectDB() // calling the connectDB function to connect to the database
+
+/*
 //First Approach - 
 
 import express from "express"; // import express module
@@ -23,3 +34,4 @@ const app = express(); // create an express application
         throw err // throw the error to stop the execution of the program
     }
 }) ()
+*/
