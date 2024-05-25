@@ -1,10 +1,12 @@
 // require('dotenv').config()
-// console.log(process.env) // remove this after you've confirmed it is working
+// console.log(process.env) 
 
 import dotenv from "dotenv"   // for working of this new importing of dotenv we need to add "type": "module" in package.json and also need to add {"dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"} into scripts in package.json
 import mongoose from "mongoose";
 import { DB_NAME } from "./constants.js";
 import connectDB from "./db/DBconnect.js";
+import {app} from "./app.js" 
+
 dotenv.config({     // calling the config method of the dotenv object to load the environment variables from the .env file
     path:'./env'
 })
@@ -12,6 +14,9 @@ dotenv.config({     // calling the config method of the dotenv object to load th
 
 connectDB() // calling the connectDB function to connect to the database
 .then(() => {
+    app.on("error", (error) => {
+        console.error("Listener ERROR:", error)
+    })
     app.listen(process.env.PORT || 3000, () => {
         console.log(`Server is running on port: ${process.env.PORT}`)
 })    // .then promise to handle the success case
