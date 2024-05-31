@@ -3,7 +3,7 @@ class apiError extends Error {  // Standardizing the error response by creating 
         statusCode, // The status code of the error
         message = "Something went wreong ",     
         errors = [], // the errors array to store the error messages
-        statck = "" // The stack trace of the error
+        stack = "" // The stack trace of the error
     ){
         super(message)  //super keyword is used to access and call functions on an object's parent. and we rewritting the message property of the Error class
         this.statusCode = statusCode // rewriting the statusCode property of the Error class
@@ -12,8 +12,8 @@ class apiError extends Error {  // Standardizing the error response by creating 
         this.success = false // setting the success property to false
         this.errors = errors // setting the errors property to the errors passed in the constructor
 
-        if (statck){  // checking if the stack trace is passed in the constructor and setting the stack property to the stack trace
-            this.stack = statck
+        if (stack){  // checking if the stack trace is passed in the constructor and setting the stack property to the stack trace
+            this.stack = stack
         }else{
             Error.captureStackTrace(this,this.constructor)
         }
