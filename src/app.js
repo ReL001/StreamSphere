@@ -15,4 +15,9 @@ app.use(express.urlencoded({extended: true, limit:'32kb'}))
 app.use(express.static("public")) // express.static() is a middleware that serves static files and is based on the serve-static package. It is used to serve static files such as images, CSS, JavaScript, and other assets. In this case, it serves files from the public directory.
 app.use(cookieParser()) // use the cookie-parser middleware to parse cookies attached to the client request object and make them available in the request object as req.cookies.
 
+//routes import  //import the userRouter from the user.routes.js file and use it as a middleware in the app object.
+import userRouter from './routes/user.routes.js';
+
+app.use("/api/v1/user", userRouter)  //use the userRouter middleware for all requests that start with the /api/v1/user path. The requests will be forwarded to the userRouter middleware..
+
 export { app } //export the app object to make it available to other modules.

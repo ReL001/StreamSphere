@@ -1,7 +1,7 @@
 // 
 const asyncHandler = (requestHandler) => {
-    (req, res, next) => {
-        Promise.resolve(requestHandler(req, res, next)).reject((err) => next(err))    //Promise.resolve() is a method that returns a Promise object that is resolved with the given value. In this case, the given value is the result of calling the requestHandler function with the req, res, and next arguments. The reject() method is called on the Promise object to handle any errors that might occur during the execution of the requestHandler function. If an error occurs, the error is passed to the next() function to handle the error in the Express error-handling middleware.
+    return (req, res, next) => {
+        Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))    //Promise.resolve() is a method that returns a Promise object that is resolved with the given value. In this case, the given value is the result of calling the requestHandler function with the req, res, and next arguments. The reject() method is called on the Promise object to handle any errors that might occur during the execution of the requestHandler function. If an error occurs, the error is passed to the next() function to handle the error in the Express error-handling middleware.
     }
 }
 
