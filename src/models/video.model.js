@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';  //importing the mongoose-aggregate-paginate-v2 package to add pagination to the video schema
 
 const videoSchema = new mongoose.Schema (

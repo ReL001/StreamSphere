@@ -32,7 +32,7 @@ const registerUser = asyncHandler(async(req,res) => {    // asyncHandler is a mi
     }
 
     //verify that the user does not already exist in the database by checking the username and email fields
-    const existingUser = User.findOne({
+    const existingUser = await User.findOne({
         $or: [{username}, {email}]  //check if the username or email already exists in the database
     })
 

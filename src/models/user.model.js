@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose,{Schema} from 'mongoose';
 import bcrypt from "bcrypt";  //bcrypt is a password-hashing function
 import jwt from "json-web-token"   //jsonwebtoken is a library that allows you to generate and verify JSON Web Tokens (JWTs) in Node.js
 
@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema(
             required: true,
             unique: true,
             lowercase: true,
-            trim: true,  //
-            index: true   //
+            trim: true,  
+            index: true   
         },
         email:{
             type: String,

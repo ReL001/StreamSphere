@@ -1,4 +1,5 @@
 import {v2 as cloudinary} from 'cloudinary';
+import fs from 'fs'; // Import the fs module
           
 cloudinary.config({   //Configuring cloudinary with the cloud_name, api_key and api_secret 
   cloud_name: process.env.CLOUDINARY_cloud_name, 
@@ -14,7 +15,9 @@ const uploadOnCloudinary = async (localFile) => {  //Function to upload file on 
             resource_type: "auto"
         })
         //Display success message-
-        console.log("File Uploaded Successfully");  //
+        // console.log("File Uploaded Successfully");  //
+
+        fs.unlinkSync(localFile)    //Removing local file after file upload
         return response;
     } catch (error) {
         fs.unlinkSync(localFile)    //Removing local file if file upload failed
@@ -22,4 +25,4 @@ const uploadOnCloudinary = async (localFile) => {  //Function to upload file on 
     }
 }
 
-return {uploadOnCloudinary}
+export {uploadOnCloudinary}  //Exporting the uploadOnCloudinary function
